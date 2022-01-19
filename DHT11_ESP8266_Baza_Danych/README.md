@@ -1,4 +1,1 @@
-Dokumentacja projektu,
-Opis działania,
-Lista rzeczy potrzebnych do utworzenia,
-Prezentacja działania.
+Dokumentacja projektu, opis działania, lista rzeczy potrzebnych do utworzenia, prezentacja działania.
