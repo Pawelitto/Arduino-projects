@@ -1,1 +1,11 @@
+Lista potrzebnych rzeczy(hardware):
+  ■ ESP8266 NodeMcu (płyta główna) cena: 18zł
+  ■ DHT11 (czujnik temperatury) cena: 10zł
+  ■ Przewody (Przewody połączeniowe żeńsko-żeńskie) cena: 4zł
 
+Lista potrzebnych rzeczy(software):
+  ■ Edytor tekstowy np. Visual Studio Code cena: darmowe!
+  ■ Arduino IDE (Specjalny edytor do zaprogramowania ESP8266) cena: darmowe! 
+  ■ Kod żródłowy (całego projektu) cena: darmowe!
+  ■ Hosting strony internetowej (np. NET-Speak - profesjonalna usługa w niskiej cenie) cena: 3zł
+    
