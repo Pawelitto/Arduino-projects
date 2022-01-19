@@ -1,3 +1,1 @@
-Dokumentacja projektu, opis działania, lista rzeczy potrzebnych do utworzenia, prezentacja działania - poniżej
-
-
+Dokumentacja projektu, opis działania, lista rzeczy potrzebnych do utworzenia, prezentacja działania w pliku "config.txt"
