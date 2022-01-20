@@ -26,8 +26,12 @@
  Visual Studio Code:
     ■ Instalujemy VS-Code https://code.visualstudio.com/
 
+
 === Edytowanie Pliku esp8266_wysylanie.ino === 
     ■ W linijce 7 oraz 8 należy zmienić: ssid = nazwa wifi,  password = hasło do wifi
+    ■ W linijce 10 trzeba podać adres IP serwera strony internetowej lub "localhost" jesśli pracujemy na sieci lokalnej TRZEBA zachować frazę po "/" czyli "post-esp-data.php"
     ■ W linijce 12 DHTPIN podmienić na pin do którego jest podłaczony czujnik DHT11 na płytce ESP8266 w moim przypadku jest podłączony do pinu D1 czyli GPIO 05 czyli 5
-    ■ 
+    (Piny_GPIO_ESP8266.png) - na załączonym obrazku jest rozkład PIN'ów oraz przypisanych do nich odpowiedników numerów GPIO
+    ■ W linijce 62 oraz 63 zapisujemy nazwę czujnika i poniżej lokalizację umieszczenia sondy (jest to zabieg kosmetyczny można pominąć)
+    ■ W linijce 83 jest podany interwał wysyłania danych na server (wartość jest wyrażona w milisekundach czyli 1 sekunda to 1000 milisekund)
     
