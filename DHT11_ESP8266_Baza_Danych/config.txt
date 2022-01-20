@@ -1,11 +1,22 @@
-Lista potrzebnych rzeczy(hardware):
-  ■ ESP8266 NodeMcu (płyta główna) cena: 18zł
-  ■ DHT11 (czujnik temperatury) cena: 10zł
-  ■ Przewody (Przewody połączeniowe żeńsko-żeńskie) cena: 4zł
 
-Lista potrzebnych rzeczy(software):
-  ■ Edytor tekstowy np. Visual Studio Code cena: darmowe!
-  ■ Arduino IDE (Specjalny edytor do zaprogramowania ESP8266) cena: darmowe! 
-  ■ Kod żródłowy (całego projektu) cena: darmowe!
-  ■ Hosting strony internetowej (np. NET-Speak - profesjonalna usługa w niskiej cenie) cena: 3zł
-    
+=== POTRZEBNE ELEMENTY ===
+
+  Lista potrzebnych rzeczy(hardware):
+    ■ ESP8266 NodeMcu (płyta główna) cena: 18zł
+    ■ DHT11 (czujnik temperatury) cena: 10zł
+    ■ Przewody (Przewody połączeniowe żeńsko-żeńskie) cena: 4zł
+
+  Lista potrzebnych rzeczy(software):
+    ■ Edytor tekstowy np. Visual Studio Code cena: darmowe!
+    ■ Arduino IDE (Specjalny edytor do zaprogramowania ESP8266) cena: darmowe! 
+    ■ Kod żródłowy (całego projektu) cena: darmowe!
+    ■ Hosting strony internetowej (np. NET-Speak - profesjonalna usługa w niskiej cenie) cena: 3zł
+
+=== Konfiguracja IDE ===
+ 
+  Arduino IDE:
+    ■ Z tego linku https://www.arduino.cc/en/software trzeba pobrać "Arduiuno IDE"
+    ■ Po zainstalowaniu udajemy się do zakładki Plik >> Preferencje >> Dodatkowe adresy URL do menedżera płytek: https://arduino.esp8266.com/stable/package_esp8266com_index.json
+    ■
+    ■
+ 
