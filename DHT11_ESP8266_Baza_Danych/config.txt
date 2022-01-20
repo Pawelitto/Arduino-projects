@@ -17,11 +17,17 @@
  
   Arduino IDE:
     ■ Z tego linku https://www.arduino.cc/en/software trzeba pobrać "Arduiuno IDE"
-    ■ Udajemy się do zakładki Plik    Preferencje >> Dodatkowe adresy URL do menedżera płytek: https://arduino.esp8266.com/stable/package_esp8266com_index.json
-    ■ Następnie idziemy do            Narzędzia   >> Płytka            >> Menedżer płytek        >> w polu wyszukiwania: esp8266 >> instaluj
-    ■ Teraz instaluejmy biblioteki    Szkic       >> Dołącz biblioteki >> Zarządzaj bibliotekami >> w polu wyszukiwania: DHT.h - instaluj, wificlient.h - instaluj
-    ■ Wybieramy naszą płtykę          Narzędzia   >> Płytka            >> ESP8266 Boards(3.0.2)  >> NodeMCU 1.0(ESP-12E Module)
-   
+    ■ Udajemy się do zakładki         Plik >> Preferencje >> Dodatkowe adresy URL do menedżera płytek: https://arduino.esp8266.com/stable/package_esp8266com_index.json
+    ■ Włączamy numeracje linijek      Plik >> Preferencje >> Wyświetl numery linii
+    ■ Następnie idziemy do            Narzędzia           >> Płytka            >> Menedżer płytek        >> w polu wyszukiwania: esp8266 >> instaluj
+    ■ Teraz instaluejmy biblioteki    Szkic               >> Dołącz biblioteki >> Zarządzaj bibliotekami >> w polu wyszukiwania: DHT.h - instaluj, wificlient.h - instaluj
+    ■ Wybieramy naszą płtykę          Narzędzia           >> Płytka            >> ESP8266 Boards(3.0.2)  >> NodeMCU 1.0(ESP-12E Module)
+    
  Visual Studio Code:
     ■ Instalujemy VS-Code https://code.visualstudio.com/
-  
+
+=== Edytowanie Pliku esp8266_wysylanie.ino === 
+    ■ W linijce 7 oraz 8 należy zmienić: ssid = nazwa wifi,  password = hasło do wifi
+    ■ W linijce 12 DHTPIN podmienić na pin do którego jest podłaczony czujnik DHT11 na płytce ESP8266 w moim przypadku jest podłączony do pinu D1 czyli GPIO 05 czyli 5
+    ■ 
+    
