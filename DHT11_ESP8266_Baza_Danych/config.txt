@@ -12,11 +12,16 @@
     ■ Kod żródłowy (całego projektu) cena: darmowe!
     ■ Hosting strony internetowej (np. NET-Speak - profesjonalna usługa w niskiej cenie) cena: 3zł
 
+
 === Konfiguracja IDE ===
  
   Arduino IDE:
     ■ Z tego linku https://www.arduino.cc/en/software trzeba pobrać "Arduiuno IDE"
-    ■ Po zainstalowaniu udajemy się do zakładki Plik >> Preferencje >> Dodatkowe adresy URL do menedżera płytek: https://arduino.esp8266.com/stable/package_esp8266com_index.json
-    ■
-    ■
- 
+    ■ Udajemy się do zakładki Plik    Preferencje >> Dodatkowe adresy URL do menedżera płytek: https://arduino.esp8266.com/stable/package_esp8266com_index.json
+    ■ Następnie idziemy do            Narzędzia   >> Płytka            >> Menedżer płytek        >> w polu wyszukiwania: esp8266 >> instaluj
+    ■ Teraz instaluejmy biblioteki    Szkic       >> Dołącz biblioteki >> Zarządzaj bibliotekami >> w polu wyszukiwania: DHT.h - instaluj, wificlient.h - instaluj
+    ■ Wybieramy naszą płtykę          Narzędzia   >> Płytka            >> ESP8266 Boards(3.0.2)  >> NodeMCU 1.0(ESP-12E Module)
+   
+ Visual Studio Code:
+    ■ Instalujemy VS-Code https://code.visualstudio.com/
+  
