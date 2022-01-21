@@ -22,6 +22,7 @@
     ■ Następnie idziemy do            Narzędzia           >> Płytka            >> Menedżer płytek        >> w polu wyszukiwania: esp8266 >> instaluj
     ■ Teraz instaluejmy biblioteki    Szkic               >> Dołącz biblioteki >> Zarządzaj bibliotekami >> w polu wyszukiwania: DHT.h - instaluj, wificlient.h - instaluj
     ■ Wybieramy naszą płtykę          Narzędzia           >> Płytka            >> ESP8266 Boards(3.0.2)  >> NodeMCU 1.0(ESP-12E Module)
+    ■ Wybieramy PORT COM              Narzędzia           >> Port              >> np.(COM12, COM3) jeśli będą błędy przy wgrywaniu należy zmienić port na właściwy 
     
  Visual Studio Code:
     ■ Instalujemy VS-Code https://code.visualstudio.com/
@@ -29,9 +30,30 @@
 
 === Edytowanie Pliku esp8266_wysylanie.ino === 
     ■ W linijce 7 oraz 8 należy zmienić: ssid = nazwa wifi,  password = hasło do wifi
-    ■ W linijce 10 trzeba podać adres IP serwera strony internetowej lub "localhost" jesśli pracujemy na sieci lokalnej TRZEBA zachować frazę po "/" czyli "post-esp-data.php"
+    ■ W linijce 10 trzeba podać adres IP serwera strony internetowej lub "localhost". TRZEBA zachować frazę po "/" czyli "post-esp-data.php"
     ■ W linijce 12 DHTPIN podmienić na pin do którego jest podłaczony czujnik DHT11 na płytce ESP8266 w moim przypadku jest podłączony do pinu D1 czyli GPIO 05 czyli 5
     (Piny_GPIO_ESP8266.png) - na załączonym obrazku jest rozkład PIN'ów oraz przypisanych do nich odpowiedników numerów GPIO
     ■ W linijce 62 oraz 63 zapisujemy nazwę czujnika i poniżej lokalizację umieszczenia sondy (jest to zabieg kosmetyczny można pominąć)
+    ■ W linijce 66 jest klucz API jest on po to aby baza danych rozróżniała z którego czujnika przychodzą dane.
     ■ W linijce 83 jest podany interwał wysyłania danych na server (wartość jest wyrażona w milisekundach czyli 1 sekunda to 1000 milisekund)
+    
+    
+=== Tworzenie bazy danych ===
+   ■ W panelu PhpMyAdmin tworzymy nową bazedanych (po lewej stronie jest "+nowa") warto zapamiętać nazwe bazy danych będzie to potrzebne w dalszej części
+   ■ Tworzymy 2 tabele o nazwie sensordatapiwnica, sensordatapokoj do każdej z nich dodajemy po 5 kolumn (id, sensor, location, value1, reading_time)
+   ■ Dla kolumny "id" zaznaczamy opcję "A_I" - auto increment (kazdy wiersz będzie się numerować jest to potrzebne aby wczytywać wartosci najnowsze), Typ - "INT"
+   ■ Dla kolumny "sensor" oraz "location" wybieramy Typ
+   
+   
+   
+=== Edytowanie plików index.php post-esp-data.php temppiw.h temppokoj.php ===
+    ■ W każdym z tych plików TRZEBA podmienić dane do połączenia z bazą danych
+    ■ index.php - linijka 32  "localhost", linijka 33 nazwa usera bazy danych, linijka 34 hasło bazy danych, linijka 35 nazwa bazy danych
+    ■ Analogicznie postępujemy z pozostałymi plikami (post-esp-data.php, temppiw.h, temppokoj.php) w tych kodach dane do logowania są w pierwszych linijkach
+
+
+  
+    
+    
+    
     
