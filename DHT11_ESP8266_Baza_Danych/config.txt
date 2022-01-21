@@ -54,5 +54,11 @@
     ■ Analogicznie postępujemy z pozostałymi plikami (post-esp-data.php, temppiw.h, temppokoj.php) w tych kodach dane do logowania są w pierwszych linijkach
 
 
-  
-    
+=== Podłączenie płytki ===
+  ESP8266:
+    ■ GND(-)             z DHT11 --> GND z ESP8266
+    ■ VCC(+)             z DHT11 --> 3v3 z ESP8266
+    ■ Data(środkowy pin) z DHT11 --> D1 z ESP866
+    ■ Na końcu podłączamy przewód micro usb do źródła zasilania (komputer, kostka do ładowania tel, powerbank)
+ 
+   
