@@ -1,1 +1,61 @@
-Dokumentacja projektu, opis działania, lista rzeczy potrzebnych do utworzenia, prezentacja działania w pliku "config.txt"
+=== POTRZEBNE ELEMENTY ===
+
+  Lista potrzebnych rzeczy(hardware):
+    ■ ESP8266 NodeMcu (płyta główna) cena: 18zł
+    ■ DHT11 (czujnik temperatury) cena: 10zł
+    ■ Przewody (Przewody połączeniowe żeńsko-żeńskie) cena: 4zł
+
+  Lista potrzebnych rzeczy(software):
+    ■ Edytor tekstowy np. Visual Studio Code cena: darmowe!
+    ■ Arduino IDE (Specjalny edytor do zaprogramowania ESP8266) cena: darmowe! 
+    ■ Kod żródłowy (całego projektu) cena: darmowe!
+    ■ Hosting strony internetowej (np. NET-Speak - profesjonalna usługa w niskiej cenie) cena: 3zł
+
+
+=== Konfiguracja IDE ===
+ 
+  Arduino IDE:
+    ■ Z tego linku https://www.arduino.cc/en/software trzeba pobrać "Arduiuno IDE"
+    ■ Udajemy się do zakładki         Plik >> Preferencje >> Dodatkowe adresy URL do menedżera płytek: https://arduino.esp8266.com/stable/package_esp8266com_index.json
+    ■ Włączamy numeracje linijek      Plik >> Preferencje >> Wyświetl numery linii
+    ■ Następnie idziemy do            Narzędzia           >> Płytka            >> Menedżer płytek        >> w polu wyszukiwania: esp8266 >> instaluj
+    ■ Teraz instaluejmy biblioteki    Szkic               >> Dołącz biblioteki >> Zarządzaj bibliotekami >> w polu wyszukiwania: DHT.h - instaluj, wificlient.h - instaluj
+    ■ Wybieramy naszą płtykę          Narzędzia           >> Płytka            >> ESP8266 Boards(3.0.2)  >> NodeMCU 1.0(ESP-12E Module)
+    ■ Wybieramy PORT COM              Narzędzia           >> Port              >> np.(COM12, COM3) jeśli będą błędy przy wgrywaniu należy zmienić port na właściwy 
+    
+ Visual Studio Code:
+    ■ Instalujemy VS-Code https://code.visualstudio.com/
+    
+    
+=== Tworzenie bazy danych ===
+   ■ W panelu PhpMyAdmin tworzymy nową bazedanych (po lewej stronie jest "+nowa") warto zapamiętać nazwe bazy danych będzie to potrzebne w dalszej części
+   ■ Tworzymy 2 tabele o nazwie sensordatapiwnica, sensordatapokoj do każdej z nich dodajemy po 5 kolumn (id, sensor, location, value1, reading_time)
+   ■ Dla kolumny "id" zaznaczamy opcję "A_I" - auto increment (kazdy wiersz będzie się numerować jest to potrzebne aby wczytywać wartosci najnowsze), Typ - "INT"
+   ■ Dla kolumny "sensor" oraz "location" wybieramy Typ - "VARCHAR"
+   ■ Dla kolumny "value1"                           typ - "FLOAT"
+   ■ Dla kolumny "reading_time"                     typ - "TIMESTAMP"
+   
+
+=== Edycja plików do ESP8266 oraz strony ===
+
+  Edytowanie Pliku esp8266_wysylanie.ino:
+    ■ W linijce 7 oraz 8 należy zmienić: ssid = nazwa wifi,  password = hasło do wifi
+    ■ W linijce 10 trzeba podać adres IP serwera strony internetowej lub "localhost". TRZEBA zachować frazę po "/" czyli "post-esp-data.php"
+    ■ W linijce 12 DHTPIN podmienić na pin do którego jest podłaczony czujnik DHT11 na płytce ESP8266 w moim przypadku jest podłączony do pinu D1 czyli GPIO 05 czyli 5
+    (Piny_GPIO_ESP8266.png) - na załączonym obrazku jest rozkład PIN'ów oraz przypisanych do nich odpowiedników numerów GPIO
+    ■ W linijce 62 oraz 63 zapisujemy nazwę czujnika i poniżej lokalizację umieszczenia sondy (jest to zabieg kosmetyczny można pominąć)
+    ■ W linijce 66 jest klucz API jest on po to aby baza danych rozróżniała z którego czujnika przychodzą dane.
+    ■ W linijce 83 jest podany interwał wysyłania danych na server (wartość jest wyrażona w milisekundach czyli 1 sekunda to 1000 milisekund)
+    
+  Edytowanie plików index.php post-esp-data.php temppiw.h temppokoj.php:
+    ■ W każdym z tych plików TRZEBA podmienić dane do połączenia z bazą danych
+    ■ index.php - linijka 32  "localhost", linijka 33 nazwa usera bazy danych, linijka 34 hasło bazy danych, linijka 35 nazwa bazy danych
+    ■ Analogicznie postępujemy z pozostałymi plikami (post-esp-data.php, temppiw.h, temppokoj.php) w tych kodach dane do logowania są w pierwszych linijkach
+
+
+=== Podłączenie płytki ===
+  ESP8266:
+    ■ GND(-)             z DHT11 --> GND z ESP8266
+    ■ VCC(+)             z DHT11 --> 3v3 z ESP8266
+    ■ Data(środkowy pin) z DHT11 --> D1 z ESP866
+    ■ Na końcu podłączamy przewód micro usb do źródła zasilania (komputer, kostka do ładowania tel, powerbank)
