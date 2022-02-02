@@ -5,7 +5,7 @@ $password = "";
 $dbname = "";
 
 /*$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);*/
-/* http://esp8266test.usite.pl/post-esp-data.php?&api_key=ozgatokurwa&sensor=dht211&location=fajnemiejsce&value1=14&value2=51&value3=91 */
+/* http://esp8266test.usite.pl/post-esp-data.php?&api_key= *tutaj api key ustawiony w pliku do ardunio* &sensor=dht211&location=fajnemiejsce&value1=14&value2=51&value3=91 */
 
 
 $api_key_value = "kluczapibezpiecznypok";
